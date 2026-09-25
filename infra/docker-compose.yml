@@ -1,0 +1,13 @@
+# R0 docker: MediaMTX is the only service that must run containerized.
+# Knower and voice run natively during R0 for fast iteration.
+services:
+  mediamtx:
+    image: bluenviron/mediamtx:latest
+    ports:
+      - "8554:8554"   # RTSP in/out
+      - "8888:8888"   # HLS
+      - "8889:8889"   # WebRTC (WHEP) — the inner-voice earpiece path
+      - "1935:1935"   # RTMP (R1: OBS program in)
+    volumes:
+      - ./mediamtx/mediamtx.yml:/mediamtx.yml:ro
+    restart: unless-stopped

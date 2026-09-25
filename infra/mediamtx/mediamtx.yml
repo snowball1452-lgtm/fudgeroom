@@ -1,0 +1,43 @@
+# R0 media plane — "The Chocolate River" (spec §6)
+# Every stream in the house is addressable as a path. Nothing captures
+# directly; everything subscribes.
+
+logLevel: info
+api: yes
+apiAddress: 127.0.0.1:9997
+
+rtsp: yes
+rtspAddress: :8554
+rtspTransports: [udp, tcp]
+
+rtmp: yes
+rtmpAddress: :1935
+
+hls: yes
+hlsAddress: :8888
+
+webrtc: yes
+webrtcAddress: :8889
+webrtcEncryption: "no"     # LAN only for R0; tighten at R1
+
+paths:
+  # glasses → MediaMTX (RTSP push from the streamer's rig)
+  glasses:
+    source: publisher
+    record: no
+
+  # game capture (R0 optional; The Knower subscribes when present)
+  game:
+    source: publisher
+    record: no
+
+  # OBS program out (R1)
+  program:
+    source: publisher
+    record: no
+
+  # inner voice TTS → streamer's ear. WebRTC (WHEP) read at :8889/inner.
+  # Never recorded, never enters MeshOS as audio (only as voice.inner text).
+  inner:
+    source: publisher
+    record: no

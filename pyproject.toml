@@ -1,0 +1,17 @@
+[project]
+name = "fudgeroom"
+version = "0.1.0"
+description = "AI cohost for live game streaming and content creation — three agents, one voice in your head"
+requires-python = ">=3.10"
+dependencies = [
+    "ffmpeg-python>=0.2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools]
+packages = ["common", "agents.knower", "agents.voice", "agents.foreman", "connectors", "tools"]

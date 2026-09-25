@@ -1,0 +1,40 @@
+{
+  "sheet_version": "1.0.0",
+  "game": "Warzone — Verdansk (sample, unverified demo facts)",
+  "meta": {
+    "author": "fudgeroom",
+    "verified_in": null,
+    "note": "SAMPLE SHEET. Replace facts with session-verified entries before air."
+  },
+  "policies": {
+    "min_gap_s": 45,
+    "repeat_window_s": 3600,
+    "confidence_floor": 0.6
+  },
+  "facts": [
+    {
+      "id": "rotation-early-zone",
+      "tags": ["rotation", "zone", "early"],
+      "diction": {
+        "inner": "cut through the park now, zone pulls north",
+        "broadcast": "smart rotation, he's reading the zone early"
+      }
+    },
+    {
+      "id": "buy-station-hold",
+      "tags": ["buy", "money"],
+      "diction": {
+        "inner": "hold the buys, you want a self later",
+        "broadcast": "he's saving, that's a late-game self-revive"
+      }
+    },
+    {
+      "id": "footsteps-above",
+      "tags": ["sound", "cqb"],
+      "diction": {
+        "inner": "steps above you",
+        "broadcast": "he heard it first"
+      }
+    }
+  ]
+}

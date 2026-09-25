@@ -36,6 +36,7 @@ fudgeroom/
 │   ├── knower/        # perception (ingest, chat rollup)
 │   ├── voice/         # inner + broadcast planes, TTS adapter
 │   └── foreman/       # external agents, CLI hands, clips, distribution
+│   └── voice/playsheets/  # verified knowledge sheets (ADR-0004) + director
 ├── common/            # t_stream clock, shared event bus (R2: MeshOS adapter)
 ├── connectors/        # pluggable connector registry (chat, social, model agents)
 ├── docs/              # spec + ADRs
